@@ -1,0 +1,86 @@
+
+BB King
+===========
+
+ALBUM = Blues on Top of Blues  OK
+----------------------------
+    Title	                                Length
+    "Heartbreaker"	                        2:31
+    "Losing Faith in You"	                2:58
+    "Dance with Me"	                        3:22 <===
+    "That's Wrong, Little Mama"	            2:19  <===
+    "Having My Say"	                        2:39
+    "I'm Not Wanted Anymore"	            2:24
+    "Worried Dream" 	                    2:54 <===
+    "Paying the Cost to Be the Boss"        2:35
+    "Until I Found You"	                    2:23  <===
+    "I'm Gonna Do What They Do to Me"       2:48
+    "Raining in My Heart"	                2:28
+    "Now That You've Lost Me"	            2:28
+
+
+
+ALBUM =  Midnight Believer
+---------------------------
+    "When It All Comes Down (I'll Still Be Around)" - 4:11  <===
+    "Midnight Believer" - 4:59 <==
+    "I Just Can't Leave Your Love Alone" - 4:18
+    "Hold On (I Feel Our Love Is Changing)" - 4:10 <===
+    "Never Make a Move Too Soon" (Stix Hooper, Jennings) - 5:29
+    "A World Full of Strangers" - 4:23  <===
+    "Let Me Make You Cry a Little Longer" - 5:49
+
+
+
+
+
+ROD STEWART
+=============
+
+ALBUM = A Night on the Town
+----------------------------
+	"Tonight's the Night (Gonna Be Alright)"	Rod Stewart	3:54
+	"The First Cut Is the Deepest"	Cat Stevens	4:31  <===
+	"Fool for You"	Stewart	3:49  <====
+	"The Killing of Georgie (Part I and II)"	Stewart	6:28
+	"The Balltrap"	Stewart	4:37
+	"Pretty Flamingo"	Mark Barkan	3:27  <===
+	"Big Bayou"	Gib Guilbeau	3:54
+	"The Wild Side of Life"	Arlie Carter, William Warren	5:09
+	"Trade Winds"
+
+
+ALBUM = Blondes Have More Fun
+------------------------------
+
+    "Da Ya Think I'm Sexy?"  – 5:31[a]  <===
+    "Dirty Weekend" (Stewart, Gary Grainger) – 2:36  <===
+    "Ain't Love a Bitch" (Stewart, Grainger) – 4:39
+    "The Best Days of My Life" (Stewart, Jim Cregan) – 4:21
+    "Is That the Thanks I Get?" (Stewart, Cregan) – 4:32
+    "Attractive Female Wanted" (Stewart, Grainger) – 4:17  <===
+    "Blondes (Have More Fun)" (Stewart, Cregan) – 3:46
+    "Last Summer" (Stewart, Philip Chen) – 4:05  <===
+    "Standin' in the Shadows of Love" (Lamont Dozier, Eddie Holland, Brian Holland) – 4:28
+    "Scarred and Scared" (Stewart, Grainger) – 4:54
+
+
+
+
+JEAN JACQUE GOLDMAN
+=====================
+
+ALBUM = En passant
+--------------------
+
+    "Sache que je" – 5:25
+    "Bonne idée" – 3:27   
+    "Tout était dit" – 4:18
+    "Quand tu danses" – 4:25  <===
+    "Le coureur" – 4:14   <===
+    "Juste quelques hommes" – 4:44
+    "Nos mains" – 3:18  < ===
+    "Natacha" – 3:01
+    "Les murailles" – 2:28
+    "On ira" – 4:25  <===
+    "En passant" – 7:18
