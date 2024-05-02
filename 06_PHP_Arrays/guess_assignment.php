@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guessing Game for 19bb340f </title>
+  <!-- <title>Guessing Game for 19bb340f </title> -->
+  <title>Guessing Game for bd7f6b8d </title>
 </head>
 
 <body>
@@ -13,6 +14,7 @@
 
   <?php
   $guess = random_int(0, 100);
+  echo "\$guess = ", $guess;
   if (!isset($_GET['guess'])) {
     echo ("Missing guess parameter");
   } else if (strlen($_GET['guess']) < 1) {

@@ -13,15 +13,12 @@ echo $stuff["course"], "</br>";
 print_r($stuff);
 echo ("\n</br>\n");
 
-
 echo ("<pre>\n");
 print_r($stuff);
 echo ("\n</pre>\n");
 
-
 var_dump($stuff);
 echo "</br>", "</br>";
-
 
 $thing = FALSE;
 echo ("One\n");
@@ -37,28 +34,35 @@ $va[] = "World";
 print_r($va);
 echo "</br>", "</br>";
 
+//--------------------
+
 $stuff = array(
     "name" => "Chuck",
     "course" => "SI664"
 );
+
 foreach ($stuff as $k => $v) {
-    echo "Key=", $k, " Val=", $v, "\n";
+    echo "Key=", $k, " Val=", $v, ",\n";
 }
 echo "</br>", "</br>";
 
-
+//-----
 $stuff = array("Chuck", "SI664");
+
 foreach ($stuff as $k => $v) {
-    echo "Key=", $k, " Val=", $v, "\n";
+    echo "Key=", $k, " Val=", $v, ",\n";
 }
 echo "</br>", "</br>";
 
+//-----
 $stuff = array("Chuck", "SI664");
+
 for ($i = 0; $i < count($stuff); $i++) {
-    echo "I=", $i, " Val=", $stuff[$i], "\n";
+    echo "i=", $i, " value=", $stuff[$i], ", \n";
 }
 echo "</br>", "</br>";
 
+//-----
 
 $products = array(
     'paper' =>    array(
@@ -88,3 +92,8 @@ echo "</br>", "</br>";
 
 print_r($products);
 echo "</br>", "</br>";
+
+
+echo ("<pre>\n");
+print_r($products);
+echo ("\n</pre>\n");
