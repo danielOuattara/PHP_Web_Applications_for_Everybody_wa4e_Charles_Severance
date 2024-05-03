@@ -6,8 +6,8 @@ $txt = "0123456789";
 while ($x < 7) {
     // echo $x, "<br />";
     for ($iter = 0; $iter < strlen($txt); $iter++) {
-        echo $x, "<br />--------------------<br />";
-        echo $iter, "<br />";
+        echo $x, "<br />";
+        echo $iter, "<br />--------------------<br />";
     }
     $x++;
 }

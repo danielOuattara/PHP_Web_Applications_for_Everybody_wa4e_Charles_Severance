@@ -24,66 +24,80 @@ Debug Output:
 @ini_set('zlib.output_compression', 0);
 @ini_set('max_execution_time', 120);
 
-
-$goodtext = "Not found";
+$goodText = "Not found";
 $error = false;
 
 // If there is no parameter, this code is all skipped
 if (isset($_GET['md5'])) {
-    $time_start = microtime(true);
-    $md5 = $_GET['md5'];
 
-    // This is our alphabet
-    // $txt = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ,;:!?./§ù*%µ^\$¨£&é\"'(-è_çà)=~#{[|`\^@]}";
-    $txt = "abcdefghijklmnopqrstuvwxyz0123456789";
-    $txt = str_shuffle($txt);
-    $show = 15;
+    $hash_to_crack = $_GET["md5"];
+    if ($hash_to_crack) {
+        $time_start = microtime(true);
+        $md5 = $_GET['md5'];
 
-    for ($iteration_1 = 0; $iteration_1 < strlen($txt); $iteration_1++) {
-        $char_1 = $txt[$iteration_1];
+        // This is our alphabet
+        // $txt = "0123456789"; # case for number only
+        // $txt = "abcdefghijklmnopqrstuvwxyz"; # case for lower letter case ;
+        $txt = "abcdefghijklmnopqrstuvwxyz0123456789"; # case for numbers and letter lower case ;
+        // $txt = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ,;:!?./§ù*%µ^\$¨£&é\"'(-è_çà)=~#{[|`\^@]}"; # case for more chars
+        $txt = str_shuffle($txt);
+        $show = 15;
 
-        for ($iteration_2 = 0; $iteration_2 < strlen($txt); $iteration_2++) {
-            $char_2 = $txt[$iteration_2];
+        for ($iteration_1 = 0; $iteration_1 < strlen($txt); $iteration_1++) {
+            $char_1 = $txt[$iteration_1];
 
-            for ($iteration_3 = 0; $iteration_3 < strlen($txt); $iteration_3++) {
-                $char_3 = $txt[$iteration_3];
+            for ($iteration_2 = 0; $iteration_2 < strlen($txt); $iteration_2++) {
+                $char_2 = $txt[$iteration_2];
 
-                for ($iteration_4 = 0; $iteration_4 < strlen($txt); $iteration_4++) {
-                    $char_4 = $txt[$iteration_4];
+                for ($iteration_3 = 0; $iteration_3 < strlen($txt); $iteration_3++) {
+                    $char_3 = $txt[$iteration_3];
 
-                    $try = $char_1 . $char_2 . $char_3 . $char_4;
-                    $try_md5 = hash('md5', $try);
-                    if ($try_md5 === $md5) {
-                        $goodtext = $try;
-                        break;
-                    }
+                    for ($iteration_4 = 0; $iteration_4 < strlen($txt); $iteration_4++) {
+                        $char_4 = $txt[$iteration_4];
 
-                    // Debug output until $show hits 0
-                    if ($show > 0) {
-                        $show = $show - 1;
-                        print "$try_md5 $try\n";
-                        if (usleep(200000) != 0) {
-                            echo "sleep failed script terminating";
+                        $try = $char_1 . $char_2 . $char_3 . $char_4;
+                        $try_md5 = hash('md5', $try);
+                        if ($try_md5 === $md5) {
+                            $goodText = $try;
                             break;
                         }
-                        flush();
-                        ob_flush();
+
+                        # Debug output until $show hits 0
+                        // if ($show > 0) {
+                        //     $show = $show - 1;
+                        //     print "$try_md5 $try\n";
+                        //     if (usleep(200000) != 0) {
+                        //         echo "sleep failed script terminating";
+                        //         break;
+                        //     }
+                        //     flush();
+                        //     ob_flush();
+                        // }
                     }
                 }
             }
         }
+        # Compute elapsed time
+        $time_end = microtime(true);
+        print "Elapsed time: ";
+        print $time_end - $time_start;
+        print "\n";
+    } else {
+        $error = "ERROR: Please provide a hash value to be cracked ";
     }
-    // Compute elapsed time
-    $time_end = microtime(true);
-    print "Elapsed time: ";
-    print $time_end - $time_start;
-    print "\n";
 }
 ?>
 
 </pre>
     <!-- Use the very short syntax and call htmlentities() -->
-    <p>Original Text: <?= htmlentities($goodtext); ?></p>
+    <p>Original PIN: <?= htmlentities($goodText); ?></p>
+    <?php
+    if ($error) {
+        print '<p style="color:red">';
+        print htmlentities($error);
+        print "</p>\n";
+    }
+    ?>
     <form>
         <input type="text" name="md5" size="60" value="<?= htmlentities($_GET['md5'] ?? '') ?>" />
         <input type="submit" value="Crack MD5" />
