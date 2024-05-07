@@ -13,26 +13,31 @@
     <p>Many field types...</p>
     <form method="post" action="more.php">
         <p>
-            <label for="inp01">Account:</label>
-            <input type="text" name="account" id="inp01" size="40">
+            <label for="account">Account:</label>
+            <input type="text" name="account" id="account" size="40">
         </p>
 
         <p>
-            <label for="inp02">Password:</label>
-            <input type="password" name="pw" id="inp02" size="40">
+            <label for="password">Password:</label>
+            <input type="password" name="pw" id="password" size="40">
         </p>
 
         <p>
-            <label for="inp03">Nick Name:</label>
+            <label for="nick">Nick Name:</label>
             <input type="text" name="nick" id="inp03" size="40">
         </p>
 
-        <p>Preferred Time:<br />
+        <p>radio: preferred Time:<br />
             <input type="radio" name="when" value="am">AM<br>
             <input type="radio" name="when" value="pm" checked>PM
         </p>
 
-        <p>Classes taken:<br />
+        <p>radio: preferred Time 2:<br />
+            <input type="radio" name="when_2" value="am">AM<br>
+            <input type="radio" name="when_2" value="pm">PM
+        </p>
+
+        <p>checkbox: class(es) taken:<br />
             <input type="checkbox" name="class1" value="si502" checked>
             SI502 - Networked Tech<br>
             <input type="checkbox" name="class2" value="si539">
@@ -42,9 +47,9 @@
         </p>
 
         <p>
-            <label for="inp06">Which soda:
-                <select name="soda" id="inp06">
-                    <option value="0">-- Please Select --</option>
+            <label for="drinks">drop down select: which drinks:
+                <select name="drinks" id="drinks">
+                    <option value="null">-- Please Select --</option>
                     <option value="1">Coke</option>
                     <option value="2">Pepsi</option>
                     <option value="3">Mountain Dew</option>
@@ -55,8 +60,8 @@
         </p>
 
         <p>
-            <label for="inp07">Which snack:
-                <select name="snack" id="inp07">
+            <label for="snack">Which snack:
+                <select name="snack" id="snack">
                     <option value="">-- Please Select --</option>
                     <option value="chips">Chips</option>
                     <option value="peanuts" selected>Peanuts</option>
@@ -66,16 +71,16 @@
         </p>
 
         <p>
-            <label for="inp08">Tell us about yourself:<br />
-                <textarea rows="10" cols="40" id="inp08" name="about">
-I love building web sites in PHP and MySQL.
+            <label for="about">Tell us about yourself:<br />
+                <textarea rows="10" cols="40" id="about" name="about">
+                    I love building web sites in PHP and MySQL.
                 </textarea>
             </label>
         </p>
 
         <p>
-            <label for="inp09">Which are awesome?<br />
-                <select multiple="multiple" name="code[]" id="inp09">
+            <label for="code">Which are awesome?<br />
+                <select multiple="multiple" name="code" id="code">
                     <option value="python">Python</option>
                     <option value="css">CSS</option>
                     <option value="html">HTML</option>
@@ -85,7 +90,7 @@ I love building web sites in PHP and MySQL.
         </p>
 
         <p>
-            <input type="submit" name="dopost" value="Submit" />
+            <input type="submit" name="submit" value="Submit" />
             <input type="button" onclick="location.href='http://www.wa4e.com/'; return false;" value="Escape">
         </p>
 
