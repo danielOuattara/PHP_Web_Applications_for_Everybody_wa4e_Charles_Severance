@@ -14,34 +14,34 @@ CREATE DATABASE People DEFAULT CHARACTER SET utf8;
 
 USE People; -- (Command line only)
 
-CREATE TABLE Users_simple (
+CREATE TABLE Users (
   name VARCHAR(128), 
   email VARCHAR(128)
 );
 
-DESCRIBE Users_simple;
+DESCRIBE Users;
 
-INSERT INTO Users_simple (name, email) VALUES ('Chuck', 'csev@umich.edu') ;
-INSERT INTO Users_simple (name, email) VALUES ('Sally', 'sally@umich.edu') ;
-INSERT INTO Users_simple (name, email) VALUES ('Somesh', 'somesh@umich.edu') ;
-INSERT INTO Users_simple (name, email) VALUES ('Caitlin', 'cait@umich.edu') ;
-INSERT INTO Users_simple (name, email) VALUES ('Ted', 'ted@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Chuck', 'csev@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Sally', 'sally@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Somesh', 'somesh@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Caitlin', 'cait@umich.edu') ;
+INSERT INTO Users (name, email) VALUES ('Ted', 'ted@umich.edu') ;
 
-DELETE FROM Users_simple WHERE email='ted@umich.edu';
+DELETE FROM Users WHERE email='ted@umich.edu';
 
-UPDATE Users_simple SET name='Charles' WHERE email='csev@umich.edu';
+UPDATE Users SET name='Charles' WHERE email='csev@umich.edu';
 
-SELECT * FROM Users_simple;
+SELECT * FROM Users;
 
-SELECT * FROM Users_simple WHERE email='csev@umich.edu';
+SELECT * FROM Users WHERE email='csev@umich.edu';
 
-SELECT * FROM Users_simple ORDER BY email;
+SELECT * FROM Users ORDER BY email;
 
-SELECT * FROM Users_simple WHERE name LIKE '%e%';
+SELECT * FROM Users WHERE name LIKE '%e%';
 
-SELECT * FROM Users_simple ORDER BY email DESC LIMIT 2;
+SELECT * FROM Users ORDER BY email DESC LIMIT 2;
 
-SELECT * FROM Users_simple ORDER BY email LIMIT 1,2;
+SELECT * FROM Users ORDER BY email LIMIT 1,2;
 
 CREATE TABLE Users (
   user_id INT UNSIGNED NOT NULL AUTO_INCREMENT, 
