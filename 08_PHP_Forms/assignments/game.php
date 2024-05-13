@@ -40,7 +40,7 @@ function check($computer, $human)
     return "You lose";
 }
 
-// Check to see how the play happenned
+// Check to see how the play happened
 $result = check($computer, $human);
 
 ?>

@@ -36,7 +36,7 @@ function check($computer, $human)
     return false;
 }
 
-// Check to see how the play happenned
+// Check to see how the play happened
 $result = check($computer, $human);
 
 ?>
@@ -49,7 +49,7 @@ $result = check($computer, $human);
 </head>
 
 <body>
-<pre>
+    <pre>
      <?php print_r($_SERVER)  ?>
      <?php print_r($_REQUEST)  ?>
      <?php print_r($_POST)  ?>

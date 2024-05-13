@@ -33,7 +33,7 @@ if (isset($_POST['who']) && isset($_POST['pass'])) {
 
 <head>
     <?php require_once "bootstrap.php"; ?>
-    <title>daniel ouattara</title>
+    <title>daniel ouattara - Login</title>
 </head>
 
 <body>
