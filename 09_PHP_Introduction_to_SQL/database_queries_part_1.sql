@@ -9,8 +9,8 @@ mysql -u root -p
 CREATE USER IF NOT EXISTS 'daniel'@'localhost' IDENTIFIED BY '**Azerty77**';
 
 -- grant in advance all privileges on databases that user 'daniel' could created
-GRANT ALL PRIVILEGES ON music.* TO 'daniel'@'localhost';
-GRANT ALL PRIVILEGES ON people.* TO 'daniel'@'localhost';
+GRANT ALL PRIVILEGES ON wa4e_music.* TO 'daniel'@'localhost';
+GRANT ALL PRIVILEGES ON wa4e_people.* TO 'daniel'@'localhost';
 
 
 -- disconnect
@@ -20,11 +20,12 @@ quit
 mysql -u daniel -p
 
 -- created the databases:
-CREATE DATABASE music people DEFAULT CHARACTER SET utf8;
+CREATE DATABASE wa4e_music DEFAULT CHARACTER SET utf8;
+CREATE DATABASE wa4e_people DEFAULT CHARACTER SET utf8;
 
 
 -- connect to `people`database
-USE people;
+USE wa4e_people;
 
 -- create talbe Users:
 CREATE TABLE Users (
