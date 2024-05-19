@@ -1,4 +1,7 @@
-CREATE TABLE
+CREATE DATABASE IF NOT EXISTS wa4e_students_courses;
+USE wa4e_students_courses;
+
+CREATE TABLE IF NOT EXISTS
   User (
     user_id INTEGER NOT NULL AUTO_INCREMENT,
     email VARCHAR(128) UNIQUE,
@@ -8,7 +11,7 @@ CREATE TABLE
 SET
   = utf8;
 
-CREATE TABLE
+CREATE TABLE IF NOT EXISTS
   Course (
     course_id INTEGER NOT NULL AUTO_INCREMENT,
     title VARCHAR(128) UNIQUE,
@@ -17,7 +20,7 @@ CREATE TABLE
 SET
   = utf8;
 
-CREATE TABLE
+CREATE TABLE IF NOT EXISTS
   Member (
     user_id INTEGER,
     course_id INTEGER,
@@ -29,7 +32,11 @@ CREATE TABLE
 SET
   = utf8;
 
---
+-- NOTE: 
+-- role = 1 -> teacher
+-- role = 0 -> student
+
+
 -- insert Users
 INSERT INTO
   User (name, email)
@@ -38,7 +45,7 @@ VALUES
   ('Ed', 'ed@tsugi.org'),
   ('Sue', 'sue@tsugi.org');
 
---
+
 -- insert courses
 INSERT INTO
   Course (title)
@@ -47,7 +54,6 @@ VALUES
   ('SQL'),
   ('PHP');
 
---
 -- insert into Members
 INSERT INTO
   Member (user_id, course_id, role)
@@ -60,9 +66,9 @@ VALUES
   (2, 3, 1),
   (3, 3, 0);
 
---
+
 -- JOINNING THROUGH MEMBER (junction table)
---
+
 SELECT
   User.name,
   Member.role,

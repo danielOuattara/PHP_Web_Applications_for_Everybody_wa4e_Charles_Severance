@@ -1,17 +1,18 @@
-CREATE DATABASE music DEFAULT CHARACTER
-SET
-  utf8;
+
+-- https://en.wikipedia.org/wiki/Database_normalization
+
+CREATE DATABASE IF NOT EXISTS wa4e_music  DEFAULT CHARACTER SET  utf8;
 
 USE wa4e_music;
 
-CREATE TABLE
+CREATE TABLE IF NOT EXISTS
   Artist (
     artist_id INTEGER NOT NULL AUTO_INCREMENT,
     name VARCHAR(255),
     PRIMARY KEY (artist_id)
   ) ENGINE = InnoDB;
 
-CREATE TABLE
+CREATE TABLE IF NOT EXISTS
   Album (
     album_id INTEGER NOT NULL AUTO_INCREMENT,
     title VARCHAR(255),
@@ -21,7 +22,7 @@ CREATE TABLE
     CONSTRAINT FOREIGN KEY (artist_id) REFERENCES Artist (artist_id) ON DELETE CASCADE ON UPDATE CASCADE
   ) ENGINE = InnoDB;
 
-CREATE TABLE
+CREATE TABLE IF NOT EXISTS
   Genre (
     genre_id INTEGER NOT NULL AUTO_INCREMENT,
     name VARCHAR(255),
@@ -29,7 +30,7 @@ CREATE TABLE
     INDEX USING BTREE (name)
   ) ENGINE = InnoDB;
 
-CREATE TABLE
+CREATE TABLE IF NOT EXISTS
   Track (
     track_id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255),
@@ -69,13 +70,18 @@ VALUES
   ('About to Rock', 5, 313, 0, 1, 2),
   ('Who Made Who', 5, 207, 0, 1, 2);
 
---- JOINS
+
+
+-- JOINS Video 4
+
 SELECT
   Album.title,
   Artist.name
 FROM
   Album
   JOIN Artist ON Album.artist_id = Artist.artist_id;
+
+-- ---
 
 SELECT
   Album.title,
@@ -86,6 +92,8 @@ FROM
   Album
   JOIN Artist ON Album.artist_id = Artist.artist_id;
 
+-- ---
+
 SELECT
   Track.title,
   Track.genre_id,
@@ -95,12 +103,16 @@ FROM
   Track
   JOIN Genre;
 
+-- ---
+
 SELECT
   Track.title,
   Genre.name
 FROM
   Track
   JOIN Genre ON Track.genre_id = Genre.genre_id;
+
+-- ---
 
 SELECT
   Track.title,
@@ -114,3 +126,8 @@ FROM
   JOIN Artist ON Track.genre_id = Genre.genre_id
   AND Track.album_id = Album.album_id
   AND Album.artist_id = Artist.artist_id;
+
+
+  -- Cascade Actions
+
+  DELETE FROM Genre WHERE name = 'Metal'

@@ -112,10 +112,9 @@ VALUES
   ('Nos Mains', 3, 198, 1213, 3, 5),
   ('On ira', 5, 265, 5213, 3, 2);
 
----
---- JOINS
----
----
+-- -
+-- - JOINS
+-- -
 SELECT
   Album.title,
   Artist.name
@@ -123,8 +122,8 @@ FROM
   Album
   JOIN Artist ON Album.artist_id = Artist.artist_id;
 
---
---
+-- -
+-- -
 SELECT
   Album.title,
   Album.artist_id,
@@ -134,8 +133,8 @@ FROM
   Album
   JOIN Artist ON Album.artist_id = Artist.artist_id;
 
---
---
+-- -
+-- -
 SELECT
   Track.title,
   Track.genre_id,
@@ -145,8 +144,8 @@ FROM
   Track
   JOIN Genre;
 
---
---
+-- -
+-- -
 SELECT
   Track.title,
   Genre.name
@@ -171,8 +170,8 @@ FROM
 ORDER BY
   Album.title ASC;
 
---
---
+-- -
+-- -
 SELECT
   Artist.name,
   Genre.name
@@ -186,9 +185,9 @@ FROM
 ORDER BY
   Genre.name ASC;
 
---
+-- -
 -- all of the genres for a particular artist. Hint - use JOIN, DISTINCT and WHERE
---
+-- -
 SELECT DISTINCT
   Artist.name,
   Genre.name
@@ -204,9 +203,9 @@ WHERE
 ORDER BY
   Genre.name ASC;
 
---
---
---
+-- -
+-- -
+
 SELECT
   Track.title AS Track,
   Track.rating AS Rating,
