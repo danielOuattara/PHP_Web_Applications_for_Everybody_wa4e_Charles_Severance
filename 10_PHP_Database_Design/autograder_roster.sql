@@ -1,3 +1,8 @@
+-- Autograder, Many-to-Many
+
+CREATE DATABASE IF NOT EXISTS wa4e_10_autograder;
+USE wa4e_10_autograder;
+
 DROP TABLE
   IF EXISTS Member;
 
@@ -174,3 +179,16 @@ VALUES
   (13, 3, 0),
   (14, 3, 0),
   (15, 3, 0);
+
+
+
+SELECT 
+  `User`.name, 
+  Course.title, 
+  Member.role
+FROM 
+  `User` 
+  JOIN Member ON `User`.user_id = Member.user_id
+  JOIN Course ON Member.course_id = Course.course_id
+ORDER BY 
+  Course.title, Member.role DESC, `User`.name

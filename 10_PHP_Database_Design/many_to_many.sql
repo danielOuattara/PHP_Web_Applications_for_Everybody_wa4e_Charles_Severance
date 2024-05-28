@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS wa4e_students_courses;
-USE wa4e_students_courses;
+CREATE DATABASE IF NOT EXISTS wa4e_10_students_courses;
+USE wa4e_10_students_courses;
 
 CREATE TABLE IF NOT EXISTS
   User (

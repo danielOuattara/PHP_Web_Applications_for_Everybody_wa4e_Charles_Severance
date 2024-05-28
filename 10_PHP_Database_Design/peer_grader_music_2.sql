@@ -1,8 +1,8 @@
-CREATE DATABASE wa4e_music_2 DEFAULT CHARACTER
+CREATE DATABASE IF NOT EXISTS wa4e_10_peer_grader_music DEFAULT CHARACTER
 SET
   utf8;
 
-USE wa4e_music_2;
+USE wa4e_10_peer_grader_music;
 
 DROP TABLE
   IF EXISTS Artist;
@@ -115,6 +115,7 @@ VALUES
 -- -
 -- - JOINS
 -- -
+
 SELECT
   Album.title,
   Artist.name
@@ -124,6 +125,7 @@ FROM
 
 -- -
 -- -
+
 SELECT
   Album.title,
   Album.artist_id,
@@ -135,6 +137,7 @@ FROM
 
 -- -
 -- -
+
 SELECT
   Track.title,
   Track.genre_id,
@@ -146,6 +149,7 @@ FROM
 
 -- -
 -- -
+
 SELECT
   Track.title,
   Genre.name
@@ -153,53 +157,53 @@ FROM
   Track
   JOIN Genre ON Track.genre_id = Genre.genre_id;
 
+-- -
+-- -
+
 SELECT
   Track.title,
   Track.rating,
-  Track.length,
+  Track.len as 'length (seconds)',
   Track.count,
-  Genre.name Artist.name,
-  Album.title,
+  Genre.name ,
+  Artist.name,
+  Album.title
 FROM
   Track
-  JOIN Genre
-  JOIN Album
-  JOIN Artist ON Track.genre_id = Genre.genre_id
-  AND Track.album_id = Album.album_id
-  AND Album.artist_id = Artist.artist_id
+  JOIN Genre ON Track.genre_id = Genre.genre_id
+  JOIN Album ON Track.album_id = Album.album_id
+  JOIN Artist ON Album.artist_id = Artist.artist_id
 ORDER BY
   Album.title ASC;
 
 -- -
 -- -
+
 SELECT
   Artist.name,
   Genre.name
 FROM
   Artist
-  JOIN Album
-  JOIN Track
-  JOIN Genre ON Artist.artist_id = Album.album_id
-  AND Album.album_id = Track.album_id
-  AND Track.genre_id = Genre.genre_id
+  JOIN Album ON Artist.artist_id = Album.artist_id
+  JOIN Track ON Album.album_id = Track.album_id
+  JOIN Genre ON Track.genre_id = Genre.genre_id
 ORDER BY
   Genre.name ASC;
 
 -- -
 -- all of the genres for a particular artist. Hint - use JOIN, DISTINCT and WHERE
 -- -
+
 SELECT DISTINCT
-  Artist.name,
-  Genre.name
+  Artist.name as 'artist name',
+  Genre.name as 'genre name'
 FROM
   Artist
-  JOIN Album
-  JOIN Track
-  JOIN Genre ON Artist.artist_id = Album.album_id
-  AND Album.album_id = Track.album_id
-  AND Track.genre_id = Genre.genre_id
-WHERE
-  Artist.name = 'BB King'
+  JOIN Album ON Artist.artist_id = Album.artist_id
+  JOIN Track ON Album.album_id = Track.album_id
+  JOIN Genre ON Track.genre_id = Genre.genre_id
+-- WHERE
+--   Artist.name = 'BB King'
 ORDER BY
   Genre.name ASC;
 
@@ -212,14 +216,31 @@ SELECT
   Track.len AS 'Length (seconds)',
   Track.count AS 'Reviews Count',
   Genre.name AS Genre,
-  Artist.name AS Artist,
-  Album.title AS Album
+  Album.title AS Album,
+  Artist.name AS Artist
 FROM
   Track
-  JOIN Genre
-  JOIN Album
-  JOIN Artist ON Track.genre_id = Genre.genre_id
-  AND Track.album_id = Album.album_id
-  AND Album.artist_id = Artist.artist_id
+  JOIN Genre ON Track.genre_id = Genre.genre_id
+  JOIN Album ON Track.album_id = Album.album_id
+  JOIN Artist ON Album.artist_id = Artist.artist_id
 ORDER BY
   Album.title ASC;
+
+
+-- -
+-- - Optional question
+-- -
+
+SELECT 
+  Artist.name,
+  Genre.name,
+  COUNT(Track.track_id) as 'count'
+FROM
+  Artist
+  JOIN Album ON Artist.artist_id = Album.artist_id
+  JOIN Track ON Album.album_id = Track.album_id
+  JOIN Genre ON Track.genre_id = Genre.genre_id
+  GROUP BY
+    Artist.name, 
+    Genre.name
+;
