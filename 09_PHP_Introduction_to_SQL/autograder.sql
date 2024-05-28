@@ -1,16 +1,13 @@
-DROP DATABASE people_wa4e IF EXISTS;
+DROP DATABASE IF EXISTS wa4e_09_autograder IF EXISTS;
 
-CREATE DATABASE people_wa4e DEFAULT CHARACTER
-SET
-  utf8;
+CREATE DATABASE wa4e_09_autograder DEFAULT CHARACTER SET utf8;
 
-USE people_wa4e;
+USE wa4e_09_autograder;
 
 CREATE TABLE
   Ages (name VARCHAR(128), age INTEGER);
 
-DELETE FROM
-  Ages;
+DELETE FROM Ages;
 
 INSERT INTO
   Ages (name, age)
@@ -23,7 +20,7 @@ VALUES
   ('Grzegorz', 18);
 
 SELECT
-  sha1 (CONCAT (name, age)) AS X
+  sha1(CONCAT(name, age)) AS X
 FROM
   Ages
 ORDER BY

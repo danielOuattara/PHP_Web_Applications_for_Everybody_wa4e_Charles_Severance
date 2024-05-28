@@ -22,17 +22,6 @@ CREATE TABLE Users (
 
 DESCRIBE Users;
 
-
--- PostgreSQL
-CREATE TABLE Users (
-  user_id BIGSERIAL NOT NULL ,
-  name VARCHAR(128), 
-  email VARCHAR(128),
-  PRIMARY KEY(user_id)
-);
-
-DESCRIBE Users;
-
 -- add users: 
 INSERT INTO Users (name, email) VALUES ('Chuck', 'csev@umich.edu') ;
 INSERT INTO Users (name, email) VALUES ('Sally', 'sally@umich.edu') ;

@@ -51,7 +51,6 @@ CREATE TABLE Users (
   INDEX ( name )
 );
 
-
 -- To add the index after the table was created:
 
 ALTER TABLE Users ADD INDEX ( name );
