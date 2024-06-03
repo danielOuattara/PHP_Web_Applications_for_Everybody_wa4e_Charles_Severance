@@ -1,24 +1,26 @@
 <?php
 
 $chuck = array(
-	"fullname" => "Chuck Severance",
+	"full_name" => "Chuck Severance",
 	'room' => '3437NQ'
 );
 
 $colleen = array(
-	"familyname" => "van Lent",
-	'givenname' => 'Colleen',
+	"family_name" => "van Lent",
+	'given_name' => 'Colleen',
 	'room' => '3439NQ'
 );
 
-function get_person_name($person)
+function get_person_info($person)
 {
-	if (isset($person['fullname'])) return $person['fullname'];
-	if (isset($person['familyname']) && isset($person['givenname'])) {
-		return $person['givenname'] . ' ' . $person['familyname'];
+	if (isset($person['full_name'])) {
+		return $person['full_name'];
+	} elseif (isset($person['family_name']) && isset($person['given_name'])) {
+		return $person['given_name'] . ' ' . $person['family_name'];
+	} else {
+		return false;
 	}
-	return false;
 }
 
-print get_person_name($chuck) . "\n";
-print get_person_name($colleen) . "\n";
+print get_person_info($chuck) . "\n";
+print get_person_info($colleen) . "\n";

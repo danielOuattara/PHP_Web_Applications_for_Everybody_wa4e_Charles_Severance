@@ -31,7 +31,7 @@ class MyClass2 extends MyClass
     {
         echo $this->pub . "\n";
         echo $this->pro . "\n";
-        echo $this->priv . "\n"; // Undefined
+        echo $this->priv . "\n"; // Undefined property '$priv'
     }
 }
 

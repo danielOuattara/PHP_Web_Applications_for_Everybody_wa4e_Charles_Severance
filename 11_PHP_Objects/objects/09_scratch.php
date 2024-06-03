@@ -1,5 +1,15 @@
 <?php
 
+
+/* 
+
+Sometimes a developer will prefer to make an object 
+with public key-value pairs rather than an array.
+
+Use where appropriate…
+
+*/
+
 $player = new stdClass();
 
 $player->name = "Chuck";
